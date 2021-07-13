@@ -1,9 +1,10 @@
 import React from 'react';
+import {GiShoppingCart} from 'react-icons/gi';
 
 const CartWidget = () => {
     return (
         <div>
-            icono carrito
+            <GiShoppingCart className="icono"/>
         </div>
     )
 }
