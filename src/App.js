@@ -9,7 +9,7 @@ function App() {
       <NavBar />
       <ItemListContainer saludo = 'Hola, soy ItemListContainer' />
     </div>
-  );
+  )
 }
 
 export default App;
