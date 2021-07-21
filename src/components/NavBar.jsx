@@ -5,7 +5,7 @@ import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="menu">
             <Navbar.Brand href="#home">PichiCómics</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

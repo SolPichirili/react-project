@@ -1,15 +1,17 @@
-import React from 'react';
 import ItemCount from './ItemCount';
+import ItemList from './ItemList';
+
 
 const agregarCarrito = (cant) => {
     alert(`Usted ha agregado ${cant}`)
 }
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+
     return (
         <div>
-            <h1>{props.saludo}</h1>
-            <ItemCount stock={5} inicial={1} onAdd={agregarCarrito}/>
+            <ItemCount stock={5} inicial={1} onAdd={agregarCarrito} />
+            <ItemList/>
         </div>
     )
 }

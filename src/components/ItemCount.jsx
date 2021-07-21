@@ -15,7 +15,10 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
         if (cantidad > inicial) {
             setCantidad(cantidad - 1)
         }
+    }
 
+    const manejarOnAdd = () => {
+        onAdd(cantidad)
     }
 
     return (
@@ -25,7 +28,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
                 <label className="alert alert-white">{cantidad}</label>
                 <Button onClick={incrementar}>+</Button>
             </ButtonGroup>
-            <Button onClick={() => onAdd(cantidad)}>Agregar al Carrito</Button>
+            <Button onClick={manejarOnAdd}>Agregar al Carrito</Button>
         </div>
     )
 }
