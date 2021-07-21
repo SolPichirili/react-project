@@ -1,6 +1,5 @@
-import ItemCount from './ItemCount';
-import ItemDetailContainer from './ItemDetailContainer';
-import ItemList from './ItemList';
+import ItemCount from '../components/ItemCount';
+import ItemList from '../components/ItemList';
 
 
 const agregarCarrito = (cant) => {
@@ -13,7 +12,6 @@ const ItemListContainer = () => {
         <div>
             <ItemCount stock={5} inicial={1} onAdd={agregarCarrito} />
             <ItemList />
-            <ItemDetailContainer />
         </div>
     )
 }
