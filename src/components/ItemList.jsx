@@ -24,11 +24,7 @@ const ItemList = () => {
       }
     });
 
-    const obtenerPromesa = () => {
-      return promesa;
-    }
-
-    obtenerPromesa()
+    promesa
       .then(resp => setItemList(resp))
       .catch(err => console.log(err))
       .finally(console.log('Hubo un error pero continuamos'))
