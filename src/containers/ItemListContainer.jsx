@@ -1,7 +1,6 @@
 import ItemCount from '../components/ItemCount';
 import ItemList from '../components/ItemList';
 
-
 const agregarCarrito = (cant) => {
     alert(`Usted ha agregado ${cant}`)
 }

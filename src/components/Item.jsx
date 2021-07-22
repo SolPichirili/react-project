@@ -1,25 +1,17 @@
-import { Card, Row, Col } from "react-bootstrap";
-
 const Item = ({ título, descripción, precio, url }) => {
 
   return (
-    <div>
-        <Row>
-          <Col>
-            <Card className="tarjetaDeProd">
-              <Card.Img variant="top" src={url} />
-              <Card.Body>
-                <Card.Title>{título}</Card.Title>
-                <Card.Text>
-                  {descripción}
-                </Card.Text>
-                <Card.Text>
-                  {precio}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+    <div className="card col-3">
+      <img className="card-img-top img-fluid" src={url} alt="tapa-de-comics" />
+      <div className="card-body">
+        <h5>{título}</h5>
+        <p className="card-text">
+          {descripción}
+        </p>
+        <p className="card-text">
+          {precio}
+        </p>
+      </div>
     </div>
   )
 }

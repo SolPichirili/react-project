@@ -8,18 +8,15 @@ const ItemDetailContainer = () => {
     useEffect(() => {
 
         obtenerItems()
-            .then(resp => setItems(resp))
+            .then(resp => resp.filter(item => item.id === '1'))
+            .then(resp => setItems(resp[0]))
             .catch(err => console.log(err))
             .finally(console.log('Hubo un error pero continuamos'))
 
     }, [])
-
-    let filtro = items.filter(item => item.id === '1')
-
+    
     return (<div>
-        {filtro.map(item => (
-            <ItemDetail key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} url={item.url} />
-        ))}
+        <ItemDetail título={items.título} precio={items.precio} descripción={items.descripción} url={items.url} />
     </div>)
 }
 

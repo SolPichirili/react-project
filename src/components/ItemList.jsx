@@ -31,7 +31,7 @@ const ItemList = () => {
   }, [])
 
   return (
-    <div>
+    <div className="row comics">
       {itemList.map((item) => (
         <Item key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} url={item.url} />
       ))}
