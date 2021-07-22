@@ -3,7 +3,7 @@ let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2
 { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'La historia se desarrolla a partir de las experiencias del propio autor (Art Spiegelman) y las entrevistas a su padre, que narra su vida como judío polaco y superviviente del Holocausto.', url: 'https://www.lavanguardia.com/files/image_948_465/uploads/2018/07/23/5fa432c2c7ee6.jpeg' }
 ];
 
-const promesa = new Promise((resp, err) => {
+const nuevaPromesa = new Promise((resp, err) => {
     let state = 200;
     if (state === 200) {
         setTimeout(() => {
@@ -16,6 +16,8 @@ const promesa = new Promise((resp, err) => {
     }
 });
 
-export function obtenerItems() {
-    return promesa;
+const obtenerItems = () => {
+    return nuevaPromesa;
 }
+
+export default obtenerItems;
