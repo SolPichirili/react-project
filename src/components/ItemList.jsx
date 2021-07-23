@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 import Item from './Item';
+import tapaguantelete from '../imagenes/tapaguantelete.png';
+import tapabroma from '../imagenes/tapabroma.png';
+import tapamaus from '../imagenes/tapamaus.png';
 
 const ItemList = () => {
   const [itemList, setItemList] = useState([]);
 
   useEffect(() => {
 
-    let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2000', descripción: 'Cómic de Jim Starlin', url: 'https://cdn.shopify.com/s/files/1/0051/8805/9206/products/marvel-deluxe-guantelete-1_1024x1024@2x.jpg?v=1563397764' },
-    { id: '2', título: 'Cómic The Killing Joke', precio: '$3000', descripción: 'Cómic de Alan Moore', url: 'https://cdna.artstation.com/p/assets/images/images/015/439/318/large/pressy-patanik-cover.jpg?1548337090' },
-    { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'Cómic de Art Spiegelman', url: 'https://lapiedradesisifo.com/wp-content/uploads/2014/05/url53245234.jpg' }
+    let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2000', descripción: 'Cómic de Jim Starlin', url:tapaguantelete },
+    { id: '2', título: 'Cómic The Killing Joke', precio: '$3000', descripción: 'Cómic de Alan Moore', url: tapabroma },
+    { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'Cómic de Art Spiegelman', url: tapamaus }
     ];
 
     const promesa = new Promise((resp, err) => {
