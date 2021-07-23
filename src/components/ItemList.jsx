@@ -3,15 +3,17 @@ import Item from './Item';
 import tapaguantelete from '../imagenes/tapaguantelete.png';
 import tapabroma from '../imagenes/tapabroma.png';
 import tapamaus from '../imagenes/tapamaus.png';
+import { useParams } from 'react-router';
 
 const ItemList = () => {
   const [itemList, setItemList] = useState([]);
+  const {categoriaId} = useParams()
 
   useEffect(() => {
 
-    let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2000', descripción: 'Cómic de Jim Starlin', url:tapaguantelete },
-    { id: '2', título: 'Cómic The Killing Joke', precio: '$3000', descripción: 'Cómic de Alan Moore', url: tapabroma },
-    { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'Cómic de Art Spiegelman', url: tapamaus }
+    let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2000', descripción: 'Cómic de Jim Starlin', img: tapaguantelete, categoria:"Marvel" },
+    { id: '2', título: 'Cómic The Killing Joke', precio: '$3000', descripción: 'Cómic de Alan Moore', img: tapabroma, categoria:"DC" },
+    { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'Cómic de Art Spiegelman', img: tapamaus, categoria:"Otros"}
     ];
 
     const promesa = new Promise((resp, err) => {
@@ -27,16 +29,25 @@ const ItemList = () => {
       }
     });
 
-    promesa
+    if(categoriaId===undefined){
+      promesa
       .then(resp => setItemList(resp))
       .catch(err => console.log(err))
       .finally(console.log('Hubo un error pero continuamos'))
-  }, [])
+    } else {
+      promesa
+      .then(resp => setItemList(resp.filter(it => it.categoria===categoriaId )))
+      .catch(err => console.log(err))
+      .finally(console.log('Hubo un error pero continuamos'))
+    }
+
+    
+  }, [categoriaId])
 
   return (
     <div className="row comics">
       {itemList.map((item) => (
-        <Item key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} url={item.url} />
+        <Item id={item.id} key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} img={item.img} />
       ))}
     </div>
   )

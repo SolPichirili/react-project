@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../components/ItemDetail";
 import obtenerItems from "../servicios/obtenerItems";
 import ItemCount from '../components/ItemCount';
+import { useParams } from "react-router";
 
 const agregarCarrito = (cant) => {
     alert(`Usted ha agregado ${cant}`)
@@ -9,25 +10,28 @@ const agregarCarrito = (cant) => {
 
 const ItemDetailContainer = () => {
     const [items, setItems] = useState([])
+    const { id } = useParams()
 
     useEffect(() => {
 
         obtenerItems()
-            .then(resp => resp.filter(item => item.id === '1'))
-            .then(resp => setItems(resp[0]))
+            .then(resp => setItems(resp.filter(it => it.id === id)))
             .catch(err => console.log(err))
             .finally(console.log('Hubo un error pero continuamos'))
 
-    }, [])
+    }, [id])
 
-    return (<div className="container detalle">
-        <div>
-            <ItemDetail título={items.título} precio={items.precio} descripción={items.descripción} url={items.url} />
-        </div>
-        <div>
-            <ItemCount stock={5} inicial={1} onAdd={agregarCarrito} />
-        </div>
-    </div>)
+    return (
+        <div className="container detalle">
+            {items.map(item => (
+                <div>
+                    <ItemDetail título={item.título} precio={item.precio} descripción={item.descripción} img={item.img} />
+                </div>)
+            )}
+            <div>
+                <ItemCount stock={5} inicial={1} onAdd={agregarCarrito} />
+            </div>
+        </div>)
 }
 
 export default ItemDetailContainer;
