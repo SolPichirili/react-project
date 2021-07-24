@@ -54,6 +54,7 @@
 .botonCompra Button {
   background-color: #7952b3;
   border: 0.5rem solid #7952b3;
+  color: #ffe484 !important;
 }
 
 .botonCompra button:hover{

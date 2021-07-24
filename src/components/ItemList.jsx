@@ -1,25 +1,23 @@
 import { useEffect, useState } from 'react';
 import Item from './Item';
-import tapaguantelete from '../imagenes/tapaguantelete.png';
-import tapabroma from '../imagenes/tapabroma.png';
-import tapamaus from '../imagenes/tapamaus.png';
 import { useParams } from 'react-router';
+import productos from '../servicios/productos';
+import { Spinner } from 'react-bootstrap';
 
 const ItemList = () => {
   const [itemList, setItemList] = useState([]);
-  const {categoriaId} = useParams()
+  const [loading, setLoading] = useState(true);
+  const { categoriaId } = useParams()
 
   useEffect(() => {
 
-    let productos = [{ id: '1', título: 'Cómic The Infinity Gauntlet', precio: '$2000', descripción: 'Cómic de Jim Starlin', img: tapaguantelete, categoria:"Marvel" },
-    { id: '2', título: 'Cómic The Killing Joke', precio: '$3000', descripción: 'Cómic de Alan Moore', img: tapabroma, categoria:"DC" },
-    { id: '3', título: 'Cómic Maus', precio: '$2000', descripción: 'Cómic de Art Spiegelman', img: tapamaus, categoria:"Otros"}
-    ];
+    setLoading(true)
 
     const promesa = new Promise((resp, err) => {
       let state = 200;
       if (state === 200) {
         setTimeout(() => {
+          setLoading(false);
           resp(productos)
         }, 2000);
       } else {
@@ -29,27 +27,32 @@ const ItemList = () => {
       }
     });
 
-    if(categoriaId===undefined){
+    if (categoriaId === undefined) {
       promesa
-      .then(resp => setItemList(resp))
-      .catch(err => console.log(err))
-      .finally(console.log('Hubo un error pero continuamos'))
+        .then(resp => setItemList(resp))
+        .catch(err => console.log(err))
+        .finally(console.log('Hubo un error pero continuamos'))
     } else {
       promesa
-      .then(resp => setItemList(resp.filter(it => it.categoria===categoriaId )))
-      .catch(err => console.log(err))
-      .finally(console.log('Hubo un error pero continuamos'))
+        .then(resp => setItemList(resp.filter(it => it.categoria === categoriaId)))
+        .catch(err => console.log(err))
+        .finally(console.log('Hubo un error pero continuamos'))
     }
 
-    
+
   }, [categoriaId])
 
   return (
     <div className="row comics">
-      {itemList.map((item) => (
+      {loading && <Spinner animation="border" role="status">
+        <span className="visually-hidden"></span>
+      </Spinner>}
+      {!loading && itemList.map((item) => (
         <Item id={item.id} key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} img={item.img} />
       ))}
     </div>
+
+
   )
 }
 
