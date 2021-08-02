@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { ButtonGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
-const ItemCount = ({ stock, inicial, onAdd }) => {
-    const [cantidad, setCantidad] = useState(inicial)
-
+const ItemCount = ({ stock, onAdd, cantidad, setCantidad }) => {
     const incrementar = () => {
         if (cantidad < stock) {
             setCantidad(cantidad + 1)
@@ -12,7 +9,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
     }
 
     const decrementar = () => {
-        if (cantidad > inicial) {
+        if (cantidad > 1) {
             setCantidad(cantidad - 1)
         }
     }

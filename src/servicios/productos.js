@@ -14,7 +14,7 @@ const productos = [
         descripción2: 'Escrito por Jim Starley e ilustrado por George Pérez y Ron Lim, cuenta cómo Thanos planea controlar el multiverso con su guantelete y las cinco Gemas del Infinito: Tiempo, Espacio, Mente, Alma, Realidad y Poder.', 
         img: tapaguantelete,
         img2: thanosdetalle,
-        categoria:"Marvel",
+        categoria:"Marvel"
     },
 
     {
