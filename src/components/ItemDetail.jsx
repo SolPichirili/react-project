@@ -1,6 +1,7 @@
 import { Button } from 'react-bootstrap';
 import { useState} from 'react';
 import ItemCount from '../components/ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ título, precio, descripción, img }) => {
     const [count, setCount] = useState (1)
@@ -18,7 +19,7 @@ const ItemDetail = ({ título, precio, descripción, img }) => {
             <ItemCount stock={5} onAdd={agregarAlCarrito} cantidad={count} setCantidad={setCount}/>
         </div>
         <div>
-            <Button>Terminar mi compra</Button>
+            <Button><Link to="/carrito">Terminar mi compra</Link></Button>
         </div>
     </div>)
 }
