@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
         <div className="container detalle">
             {items.map(item => (
                 <div>
-                    <ItemDetail título={item.título} precio={item.precio} descripción={item.descripción2} img={item.img2} />
+                    <ItemDetail key={item.id} item={item} />
                 </div>)
             )}
         </div>)

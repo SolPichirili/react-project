@@ -48,7 +48,7 @@ const ItemList = () => {
         <span className="visually-hidden"></span>
       </Spinner>}
       {!loading && itemList.map((item) => (
-        <Item id={item.id} key={item.id} título={item.título} precio={item.precio} descripción={item.descripción} img={item.img} />
+        <Item key={item.id} item={item} />
       ))}
     </div>
 

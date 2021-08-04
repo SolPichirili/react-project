@@ -5,10 +5,11 @@ import NavBar from './components/NavBar.jsx';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import Cart from './components/Cart';
-import cartContext from './context/CartContext';
+import CartContextProvider from './context/CartContext';
 
 function App() {
   return (
+    <CartContextProvider>
     <Router>
       <div className="App">
         <NavBar />
@@ -29,6 +30,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </CartContextProvider>
   );
 }
 

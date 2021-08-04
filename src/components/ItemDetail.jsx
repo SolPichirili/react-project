@@ -1,25 +1,25 @@
-import { Button } from 'react-bootstrap';
 import { useState} from 'react';
 import ItemCount from '../components/ItemCount';
-import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ título, precio, descripción, img }) => {
-    const [count, setCount] = useState (1)
+const ItemDetail = ({ item }) => {
+    const [count, setCount] = useState(1)
+    const [pulsar, setPulsar] = useState(false)
 
-    const agregarAlCarrito = () => {
-        setCount(count);
+    const agregarAlCarrito = (count) => {
+        setCount(count)
+        setPulsar(true)
     }
 
+    console.log(count)
+    console.log(pulsar)
+
     return (<div>
-        <img src={img} alt="imagen-comic" className="img-fluid imgThanos"></img>
-        <h1>{título}</h1>
-        <p>{precio}</p>
-        <p>{descripción}</p>
+        <img src={item.img2} alt="imagen-comic" className="img-fluid imgThanos"></img>
+        <h1>{item.título}</h1>
+        <p>{item.precio}</p>
+        <p>{item.descripción2}</p>
         <div>
-            <ItemCount stock={5} onAdd={agregarAlCarrito} cantidad={count} setCantidad={setCount}/>
-        </div>
-        <div>
-            <Button><Link to="/carrito">Terminar mi compra</Link></Button>
+            <ItemCount stock={5} inicial={1} onAdd={agregarAlCarrito}/>
         </div>
     </div>)
 }

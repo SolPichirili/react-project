@@ -1,7 +1,11 @@
-import { ButtonGroup } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { ButtonGroup, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const ItemCount = ({ stock, onAdd, cantidad, setCantidad }) => {
+const ItemCount = ({ stock, inicial, onAdd }) => {
+    const [cantidad, setCantidad] = useState(inicial)
+    const [pulsado, setPulsado] = useState(false)
+
     const incrementar = () => {
         if (cantidad < stock) {
             setCantidad(cantidad + 1)
@@ -9,13 +13,14 @@ const ItemCount = ({ stock, onAdd, cantidad, setCantidad }) => {
     }
 
     const decrementar = () => {
-        if (cantidad > 1) {
+        if (cantidad > inicial) {
             setCantidad(cantidad - 1)
         }
     }
 
     const manejarOnAdd = () => {
         onAdd(cantidad)
+        setPulsado(true)
     }
 
     return (
@@ -25,7 +30,9 @@ const ItemCount = ({ stock, onAdd, cantidad, setCantidad }) => {
                 <label className="alert alert-white">{cantidad}</label>
                 <Button onClick={incrementar}>+</Button>
             </ButtonGroup>
-            <Button onClick={manejarOnAdd} className="botonAgregar">Agregar al Carrito</Button>
+            {pulsado ? 
+            <Link to={`/carrito`} className="btn botonAgregar">Terminar mi Compra</Link> 
+            : <button className="btn botonAgregar" onClick={manejarOnAdd}> Agregar al Carrito </button>}
         </div>
     )
 }
