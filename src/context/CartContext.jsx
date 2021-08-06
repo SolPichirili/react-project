@@ -9,21 +9,31 @@ const CartContextProvider = ({ children }) => {
 
     const guardarCart = (item) => {
         const idCompra = compra.findIndex(it => item.item.id === it.item.id)
-        if(idCompra === -1){
+        if (idCompra === -1) {
             setCompra([...compra, item])
-        }else{
+        } else {
             const nuevaCantidad = compra[idCompra].cantidad + item.cantidad
-            const listaAnterior = compra.filter(it=> it.item.id !== item.item.id)
-            setCompra([...listaAnterior,{item: item.item, cantidad: nuevaCantidad}])
+            const listaAnterior = compra.filter(it => it.item.id !== item.item.id)
+            setCompra([...listaAnterior, { item: item.item, cantidad: nuevaCantidad }])
         }
-        
     }
 
-    const totalItems =()=>{
-        return compra.reduce((acum, valor)=> acum + valor.cantidad, 0)
+    const precioItem = () => {
+        return compra[0].cantidad * compra[0].item.precio2
     }
 
-    function borrarTodo (){
+    const eliminarItem = () => {
+    }
+
+    const precioTotal = () => {
+        return compra.reduce((acum, valor) => (acum + (valor.cantidad * valor.item.precio2)), 0)
+    }
+
+    const totalItems = () => {
+        return compra.reduce((acum, valor) => acum + valor.cantidad, 0)
+    }
+
+    function borrarTodo() {
         setCompra([])
     }
 
@@ -32,7 +42,10 @@ const CartContextProvider = ({ children }) => {
             value={{
                 compra,
                 guardarCart,
+                precioItem,
+                precioTotal,
                 totalItems,
+                eliminarItem,
                 borrarTodo
             }}>
             {children}
