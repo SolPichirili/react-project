@@ -18,9 +18,13 @@ const CartContextProvider = ({ children }) => {
         }
     }
 
+    const precioPorItems = (precio, cantidad) => {
+        return precio*cantidad;
+    }
+
     const eliminarItem = (id) => {
-        const itemsEnCarrito = compra.filter(it => it.id !== id)
-        console.log(itemsEnCarrito)
+        const itemsEnCarrito = compra.filter(it => it.item.id !== id)
+        setCompra(itemsEnCarrito);
     }
 
     const precioTotal = () => {
@@ -40,6 +44,7 @@ const CartContextProvider = ({ children }) => {
             value={{
                 compra,
                 guardarCart,
+                precioPorItems,
                 precioTotal,
                 totalItems,
                 eliminarItem,
