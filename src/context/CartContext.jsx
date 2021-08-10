@@ -19,7 +19,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const precioPorItems = (precio, cantidad) => {
-        return precio*cantidad;
+        return precio * cantidad;
     }
 
     const eliminarItem = (id) => {
@@ -28,7 +28,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const precioTotal = () => {
-        return compra.reduce((acum, valor) => (acum + (valor.cantidad * valor.item.precio2)), 0)
+        return compra.reduce((acum, valor) => (acum + (valor.cantidad * valor.item.precio)), 0)
     }
 
     const totalItems = () => {

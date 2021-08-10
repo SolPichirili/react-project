@@ -12,10 +12,10 @@ const Cart = () => {
                 <>
                     {compra.map(i => (
                         <div key={i.item.id} className='col-12 compra'>
-                            <p>{i.item.título}</p>
+                            <p>{i.item.titulo}</p>
                             <p>Cantidad: {i.cantidad}</p>
                             <p>Precio por unidad: {i.item.precio}</p>
-                            <p>Subtotal: $ {precioPorItems(i.item.precio2, i.cantidad)}</p>
+                            <p>Subtotal: $ {precioPorItems(i.item.precio, i.cantidad)}</p>
                             <button onClick={()=> eliminarItem(i.item.id)}>X</button>
                         </div>))}
                     <p>Productos en su carrito: {totalItems()}</p>

@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "../components/ItemDetail";
-import obtenerItems from "../servicios/obtenerItems";
 import { useParams } from "react-router";
+import { getFirestore } from "../servicios/firebaseServicio";
+import ItemDetail from '../components/ItemDetail';
 
 const ItemDetailContainer = () => {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState({})
     const { id } = useParams()
 
     useEffect(() => {
 
-        obtenerItems()
-            .then(resp => setItems(resp.filter(it => it.id === id)))
-            .catch(err => console.log(err))
-            .finally(console.log('Hubo un error pero continuamos'))
+        const dbQuery = getFirestore()
+
+        dbQuery.collection('items').doc(id).get()
+            .then(resp => setItems({ ...resp.data(), id: resp.id }))
 
     }, [id])
 
+    console.log(items)
+
     return (
-        <div className="container detalle">
-            {items.map(item => (
-                <div key={item.id} >
-                    <ItemDetail item={item} />
-                </div>)
-            )}
+        <div>
+            <ItemDetail item={items} />
         </div>)
 }
 
