@@ -16,10 +16,10 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link><Link to="/" className="link">Inicio</Link></Nav.Link>
-                    <Nav.Link><Link to="/categorias/Marvel" className="link">Marvel</Link></Nav.Link>
-                    <Nav.Link><Link to="/categorias/DC" className="link">DC</Link></Nav.Link>
-                    <Nav.Link><Link to="/categorias/Otros" className="link">Otros</Link></Nav.Link>
+                    <Link to="/" className="link">Inicio</Link>
+                    <Link to="/categorias/Marvel" className="link">Marvel</Link>
+                    <Link to="/categorias/DC" className="link">DC</Link>
+                    <Link to="/categorias/Otros" className="link">Otros</Link>
                 </Nav>
                 {compra.length !== 0 && <CartWidget />}
             </Navbar.Collapse>

@@ -9,6 +9,7 @@
 
 .link {
   color: #ffe484;
+  margin: 0.5rem;
 }
 
 .link:hover{
@@ -93,6 +94,15 @@
   border: 0.5rem solid #ffe484;
   border-radius: 0.5rem;
   color: black;
+}
+
+form {
+  margin: 2rem auto;
+}
+
+form input {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 
