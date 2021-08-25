@@ -1,5 +1,5 @@
 import './NavBar.css';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import Nav from 'react-bootstrap/Nav';
@@ -14,9 +14,12 @@ const NavBar = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Link to="/" className="link">Inicio</Link>
-                    <Link to="/categories/Marvel" className="link">Marvel</Link>
-                    <Link to="/categories/DC" className="link">DC</Link>
-                    <Link to="/categories/Otros" className="link">Otros</Link>
+                    <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                        <Link to="/categories/Marvel" className="linkDrop">Marvel</Link>
+                        <Link to="/categories/DC" className="linkDrop">DC</Link>
+                        <Link to="/categories/Otros" className="linkDrop">Otros</Link>
+                    </NavDropdown>
+                    <Link to="/offers" className="link">Ofertas del Mes</Link>
                 </Nav>
                 <CartWidget />
             </Navbar.Collapse>

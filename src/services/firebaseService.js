@@ -12,11 +12,11 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-export function getFirebase(){
+export function getFirebase() {
     return app
 }
 
-export function getFirestore(){
+export function getFirestore() {
     return firebase.firestore(app)
 }
 

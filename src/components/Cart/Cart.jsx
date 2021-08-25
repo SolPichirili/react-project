@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Form from '../Form/Form';
 
 const Cart = () => {
-    const [buyer, setBuyer] = useState({ name: '', tel: '', email: '' })
+    const [buyer, setBuyer] = useState({ name: '', tel: '', email: '', email2: '' })
     const [id, setId] = useState('')
 
     const { purchase, totalItems, removeAll, totalPrice, removeItem, priceItems } = useCartContext();
@@ -51,19 +51,18 @@ const Cart = () => {
                     <p>Productos en su carrito: {totalItems()}</p>
                     <p>Precio Total: ${totalPrice()}</p>
                     <button onClick={removeAll}>Borrar todo</button>
+                    < Form change={handleChange} submit={handleSubmit} buyer={buyer} />
+                    {id.length !== 0 && (
+                        <div><p>Su orden de compra es: {id}</p></div>
+                    )}
                 </>
             )}
+
             {purchase.length === 0 && (
                 <>
                     <p>No hay productos en el carrito</p>
                     <Link to="/" className="addButton">Ir a comprar</Link>
                 </>
-            )}
-
-            < Form change={handleChange} submit={handleSubmit} buyer={buyer} />
-
-            {id.length !== 0 && (
-                <div><p>Su orden de compra es: {id}</p></div>
             )}
         </div>
     )

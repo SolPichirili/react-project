@@ -11,3 +11,18 @@
     color: blueviolet;
     text-decoration: none;
 }
+
+#basic-nav-dropdown{
+    color: #ffe484;
+}
+
+.linkDrop {
+    color: blueviolet;
+    margin: 0.5rem;
+}
+
+.linkDrop:hover{
+    color: blueviolet;
+    text-decoration: none;
+    background-color: #ffe484
+}

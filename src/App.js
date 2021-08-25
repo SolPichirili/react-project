@@ -6,31 +6,35 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
+import Offers from './components/Offers/Offers';
 
 
 function App() {
   return (
     <CartContextProvider>
-    <Router>
-      <div className="App">
-        <NavBar />
+      <Router>
+        <div className="App">
+          <NavBar />
 
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer />
-          </Route>
-          <Route exact path="/categories/:categoryId">
-            <ItemListContainer />
-          </Route>
-          <Route exact path="/item/:id">
-            <ItemDetailContainer />
-          </Route>
-          <Route exact path="/cart">
-            <Cart /> 
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer />
+            </Route>
+            <Route exact path="/categories/:categoryId">
+              <ItemListContainer />
+            </Route>
+            <Route exact path="/item/:id">
+              <ItemDetailContainer />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+            <Route exact path="/offers">
+              <Offers />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </CartContextProvider>
   );
 }
