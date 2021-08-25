@@ -1,11 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartContextProvider from './context/CartContext/CartContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './components/NavBar.jsx';
-import ItemListContainer from './containers/ItemListContainer';
-import ItemDetailContainer from './containers/ItemDetailContainer';
-import Cart from './components/Cart';
-import CartContextProvider from './context/CartContext';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+
 
 function App() {
   return (
@@ -18,13 +19,13 @@ function App() {
           <Route exact path="/">
             <ItemListContainer />
           </Route>
-          <Route exact path="/categorias/:categoriaId">
+          <Route exact path="/categories/:categoryId">
             <ItemListContainer />
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="/carrito">
+          <Route exact path="/cart">
             <Cart /> 
           </Route>
         </Switch>

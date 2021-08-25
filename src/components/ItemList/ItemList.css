@@ -1,0 +1,7 @@
+.comics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}

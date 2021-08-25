@@ -1,0 +1,14 @@
+.buyButton {
+    margin: 2rem auto;
+}
+  
+.buyButton Button {
+    background-color: #7952b3;
+    border: 0.5rem solid #7952b3;
+    color: #ffe484 !important;
+}
+  
+.buyButton button:hover{
+    background-color: blueviolet;
+    border: 0.5rem solid blueviolet;
+}

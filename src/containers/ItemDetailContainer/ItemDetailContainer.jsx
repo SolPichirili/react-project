@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { getFirestore } from "../servicios/firebaseServicio";
-import ItemDetail from '../components/ItemDetail';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { getFirestore } from '../../services/firebaseService';
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
     const [items, setItems] = useState({})

@@ -1,0 +1,24 @@
+.more {
+    background-color: #ffe484;
+    border: 0.5rem solid #ffe484;
+    border-radius: 0.5rem;
+}
+  
+.more:hover{
+    background-color: blueviolet;
+    border: 0.5rem solid blueviolet;
+}
+
+.tarjeta {
+    background-color: #7952b3 !important;
+}
+  
+.tarjeta h5 {
+    text-align: center;
+    color: black;
+}
+  
+.tarjeta p {
+    text-align: center;
+    color: black;
+}

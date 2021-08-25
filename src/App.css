@@ -1,108 +1,11 @@
-.icono {
-  color: white;
-  font-size: 2rem;
-}
-
-.menu {
-  background-color: #7952b3;
-}
-
-.link {
-  color: #ffe484;
-  margin: 0.5rem;
-}
-
-.link:hover{
-  color: blueviolet;
-  text-decoration: none;
-}
-
-.comics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-
-.tarjeta {
-  background-color: #7952b3 !important;
-}
-
-.tarjeta h5 {
-  text-align: center;
-  color: black;
-}
-
-.tarjeta p {
-  text-align: center;
-  color: black;
-}
-
-.detalle {
-  display: flex;
-  flex-direction: row;
-}
-
-.imgThanos {
-  margin: 2rem auto;
-}
-
-.botonCompra {
-  margin: 2rem auto;
-}
-
-.botonCompra Button {
-  background-color: #7952b3;
-  border: 0.5rem solid #7952b3;
-  color: #ffe484 !important;
-}
-
-.botonCompra button:hover{
-  background-color: blueviolet;
-  border: 0.5rem solid blueviolet;
-}
-
-.botonAgregar {
+.addButton {
   background-color: #7952b3 !important;
   border: 0.5rem solid #7952b3 !important;
   color: #ffe484 !important;
 }
 
-.botonAgregar:hover{
+.addButton:hover{
   background-color: blueviolet !important;
   border: 0.5rem solid blueviolet !important;
 }
-
-.verMas {
-  background-color: #ffe484;
-  border: 0.5rem solid #ffe484;
-  border-radius: 0.5rem;
-}
-
-.verMas:hover{
-  background-color: blueviolet;
-  border: 0.5rem solid blueviolet;
-}
-
-.compra {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3rem 0;
-  background-color: #7952b3;
-  border: 0.5rem solid #ffe484;
-  border-radius: 0.5rem;
-  color: black;
-}
-
-form {
-  margin: 2rem auto;
-}
-
-form input {
-  display: block;
-  margin-bottom: 1rem;
-}
-
 
