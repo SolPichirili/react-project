@@ -1,3 +1,41 @@
+body {
+    background-color: #ffe484;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .image {
+    width: 50%;
+    height: 50%;
     margin: 2rem auto;
+}
+
+.detailTitle {
+    color: black;
+    background-color: blueviolet;
+    border: 0.5rem solid #7952b3;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.detailParag {
+    color: black;
+    width: 80%;
+    text-align: center;
+}
+
+.addButton {
+    background-color: #7952b3 !important;
+    border: 0.5rem solid #7952b3 !important;
+    color: #ffe484 !important;
+}
+  
+.addButton:hover{
+    background-color: blueviolet !important;
+    border: 0.5rem solid blueviolet !important;
 }

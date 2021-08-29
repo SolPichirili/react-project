@@ -1,0 +1,12 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usParag{
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    margin: 2rem;
+}

@@ -22,7 +22,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
     }
 
     return (
-        <div>
+        <div className="flex">
             <ButtonGroup className="buyButton">
                 <Button onClick={decrease}>-</Button>
                 <label className="alert alert-white">{count}</label>

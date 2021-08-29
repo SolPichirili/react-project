@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getFirestore } from '../../services/firebaseService';
+import Loading from '../../components/Loading/Loading';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+
 
 const ItemDetailContainer = () => {
     const [items, setItems] = useState({})
+    const [loading, setLoading] = useState(true);
     const { id } = useParams()
 
     useEffect(() => {
@@ -12,13 +15,15 @@ const ItemDetailContainer = () => {
         const dbQuery = getFirestore()
 
         dbQuery.collection('items').doc(id).get()
-            .then(resp => setItems({ ...resp.data(), id: resp.id }))
-
+            .then(resp => {
+                setLoading(false);
+                setItems({ ...resp.data(), id: resp.id })
+            })
     }, [id])
 
     return (
         <div>
-            <ItemDetail item={items} />
+            {loading ? <Loading /> : <ItemDetail item={items} />}
         </div>)
 }
 

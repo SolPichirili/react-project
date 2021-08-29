@@ -6,7 +6,7 @@ const Item = ({ item }) => {
   return (
     item.map((item, index) =>
       <div className="card tarjeta col-3" key={index}>
-        <img className="card-img-top img-fluid" src={item.url1} alt="tapa-de-comics" />
+        <img className="card-img-top img-fluid rounded img" src={item.url1} alt="tapa-de-comics" />
         <div className="card-body">
           <h5>{item.titulo}</h5>
           <p className="card-text">

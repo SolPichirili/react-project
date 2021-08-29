@@ -1,5 +1,15 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .buyButton {
-    margin: 2rem auto;
+    margin: 2rem 0;
+}
+
+.buyButton label {
+    color: blueviolet;
 }
   
 .buyButton Button {
@@ -8,7 +18,19 @@
     color: #ffe484 !important;
 }
   
-.buyButton button:hover{
+.buyButton Button:hover{
     background-color: blueviolet;
     border: 0.5rem solid blueviolet;
+}
+
+.addButton {
+    background-color: #7952b3 !important;
+    border: 0.5rem solid #7952b3 !important;
+    color: #ffe484 !important;
+    margin-bottom: 2rem;
+}
+  
+.addButton:hover{
+    background-color: blueviolet !important;
+    border: 0.5rem solid blueviolet !important;
 }

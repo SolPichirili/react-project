@@ -1,0 +1,10 @@
+.more {
+    background-color: #ffe484;
+    border: 0.5rem solid #ffe484;
+    border-radius: 0.5rem;
+}
+  
+.more:hover{
+    background-color: blueviolet;
+    border: 0.5rem solid blueviolet;
+}

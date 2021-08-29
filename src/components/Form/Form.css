@@ -6,3 +6,15 @@ form input {
     display: block;
     margin-bottom: 1rem;
 }
+
+.addButton {
+    background-color: #7952b3 !important;
+    border: 0.5rem solid #7952b3 !important;
+    border-radius: 0.5rem;
+    color: #ffe484 !important;
+}
+  
+.addButton:hover{
+    background-color: blueviolet !important;
+    border: 0.5rem solid blueviolet !important;
+}

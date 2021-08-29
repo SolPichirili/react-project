@@ -36,21 +36,21 @@ const Cart = () => {
     }
 
     return (
-        <div>
-            <h1 className="text-center">Carrito</h1>
+        <div className="flex">
+            <h1 className="text-center cartTitle">Carrito</h1>
             {purchase.length !== 0 && (
                 <>
                     {purchase.map(i => (
-                        <div key={i.item.id} className="col-12 buy">
+                        <div key={i.item.id} className="buy">
                             <p>{i.item.titulo}</p>
                             <p>Cantidad: {i.cantidad}</p>
                             <p>Precio por unidad: {i.item.precio}</p>
                             <p>Subtotal: $ {priceItems(i.item.precio, i.cantidad)}</p>
-                            <button onClick={() => removeItem(i.item.id)}>X</button>
+                            <button onClick={() => removeItem(i.item.id)} className="remove">X</button>
                         </div>))}
-                    <p>Productos en su carrito: {totalItems()}</p>
-                    <p>Precio Total: ${totalPrice()}</p>
-                    <button onClick={removeAll}>Borrar todo</button>
+                    <p className="cartParag">Productos en su carrito: {totalItems()}</p>
+                    <p className="cartParag">Precio Total: ${totalPrice()}</p>
+                    <button onClick={removeAll} className="removeAll">Borrar todo</button>
                     < Form change={handleChange} submit={handleSubmit} buyer={buyer} />
                     {id.length !== 0 && (
                         <div><p>Su orden de compra es: {id}</p></div>
@@ -60,8 +60,9 @@ const Cart = () => {
 
             {purchase.length === 0 && (
                 <>
-                    <p>No hay productos en el carrito</p>
-                    <Link to="/" className="addButton">Ir a comprar</Link>
+                    <p className="cartParag">No hay productos en el carrito.</p>
+                    <Link to="/" className="addButtonCart">Ir a comprar</Link>
+                    <Link to="/wishes" className="addButtonCart">¡Arma tu wishlist para el mes que viene!</Link>
                 </>
             )}
         </div>
