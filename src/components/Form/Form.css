@@ -1,3 +1,9 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 form {
     margin: 2rem auto;
 }
@@ -17,4 +23,8 @@ form input {
 .addButton:hover{
     background-color: blueviolet !important;
     border: 0.5rem solid blueviolet !important;
+}
+.warning {
+    color: red;
+    font-size: large;
 }

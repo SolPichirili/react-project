@@ -1,9 +1,9 @@
 import { Spinner } from "react-bootstrap";
 
-const Loading = () =>{
-    return(
+const Loading = () => {
+    return (
         <div>
-            <Spinner animation="grow"/>
+            <Spinner animation="grow" />
         </div>
     )
 }

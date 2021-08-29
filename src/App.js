@@ -8,7 +8,6 @@ import Index from './components/Index/Index';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import Offers from './components/Offers/Offers';
 import Cart from './components/Cart/Cart';
-import WishList from './components/WishList/WishList';
 
 function App() {
   return (
@@ -33,9 +32,6 @@ function App() {
             </Route>
             <Route exact path="/cart">
               <Cart />
-            </Route>
-            <Route exact path="/wishes">
-              <WishList />
             </Route>
           </Switch>
         </div>

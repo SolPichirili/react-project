@@ -7,19 +7,27 @@ import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
 
+    const index = { link: "/", text: "Inicio" }
+
+    const navBarCategories = [{ link: "/categories/Marvel", text: "Marvel" },
+    { link: "/categories/DC", text: "DC" },
+    { link: "/categories/Otros", text: "Otros" }]
+
+    const offer = { link: "/offers", text: "Ofertas del mes" }
+
     return (
         <Navbar collapseOnSelect expand="lg" className="menu">
-            <Link to="/"><img src={logo} alt="logo"></img></Link>
+            <Link to={index.link}><img src={logo} alt="logo"></img></Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to="/" className="link">Inicio</Link>
+                    <Link to={index.link} className="link">{index.text}</Link>
                     <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                        <Link to="/categories/Marvel" className="linkDrop">Marvel</Link>
-                        <Link to="/categories/DC" className="linkDrop">DC</Link>
-                        <Link to="/categories/Otros" className="linkDrop">Otros</Link>
+                        {navBarCategories.map(cat => {
+                            return (<Link to={cat.link} className="linkDrop">{cat.text}</Link>)
+                        })}
                     </NavDropdown>
-                    <Link to="/offers" className="link">Ofertas del Mes</Link>
+                    <Link to={offer.link} className="link">{offer.text}</Link>
                 </Nav>
                 <CartWidget />
             </Navbar.Collapse>

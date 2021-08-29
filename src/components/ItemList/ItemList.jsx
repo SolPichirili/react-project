@@ -18,8 +18,8 @@ const ItemList = () => {
     const dbQuery = categoryId ? collection.where('categoria', '==', categoryId) : collection.orderBy('precio').limit(3);
 
     dbQuery.get().then(resp => {
-        setLoading(false);
-        setItemList(resp.docs.map(it => ({ ...it.data(), id: it.id })));
+      setLoading(false);
+      setItemList(resp.docs.map(it => ({ ...it.data(), id: it.id })));
     })
   }, [categoryId])
 

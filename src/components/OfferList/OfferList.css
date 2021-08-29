@@ -1,3 +1,11 @@
+.comics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
 .more {
     background-color: #ffe484;
     border: 0.5rem solid #ffe484;

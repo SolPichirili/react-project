@@ -1,3 +1,4 @@
+import './ItemDetailContainer.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getFirestore } from '../../services/firebaseService';
@@ -22,7 +23,7 @@ const ItemDetailContainer = () => {
     }, [id])
 
     return (
-        <div>
+        <div className="flex">
             {loading ? <Loading /> : <ItemDetail item={items} />}
         </div>)
 }
