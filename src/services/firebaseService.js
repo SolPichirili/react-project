@@ -2,12 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCJn7AhJktBQV4Hl8Et3i5nRcSJg4NRONE",
-    authDomain: "comics-e-commerce.firebaseapp.com",
-    projectId: "comics-e-commerce",
-    storageBucket: "comics-e-commerce.appspot.com",
-    messagingSenderId: "1040602319988",
-    appId: "1:1040602319988:web:4663ad569ade4036741521"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 }
 
 const app = firebase.initializeApp(firebaseConfig)
